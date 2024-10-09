@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Footer from "@/components/footer";
 import GetStarted from "@/components/get-started";
 import { NavBar } from "@/components/navbar";
@@ -22,7 +23,7 @@ export default function TermsAndConditions() {
         <div className="p-2">Terms and Conditions</div>
         <div className="p-2">
           These Terms and Conditions ("Terms") govern your use of the services
-          offered by Berri Life Pvt. Ltd. ("Service," "Berri," "we," or "us") |
+          offered by Berri Life Pvt. Ltd. ("Service," "Berri," "we," or "us") 
           through our mobile application ("App") or website ("Web")
           (collectively referred to as the "Platform"). By accessing and using
           the Platform, you agree to comply with and be bound by these Terms. If

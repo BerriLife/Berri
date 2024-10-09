@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { AccordionDemo } from "@/components/accordian";
 import Footer from "@/components/footer";

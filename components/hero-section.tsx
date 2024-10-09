@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import { FlipImages } from "@/components/ui/flip-images";
 import { Button } from "./ui/button";
 import { WavyBackground } from "./ui/wavy-background";
-import Image from "next/image";
 
 export function HeroSection() {
   const images = [
