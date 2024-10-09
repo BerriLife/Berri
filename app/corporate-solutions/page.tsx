@@ -94,7 +94,7 @@ export default function CorporateSolutions() {
                 style={{ width: "100%", height: "100%" }}
               >
                 <Image
-                  src="/images/corporate-solutions/image5.png" // Replace with actual image path
+                  src="/images/corporate-solutions/image6.jpg" // Replace with actual image path
                   alt="Corporate Solutions Illustration"
                   width={400}
                   height={400}

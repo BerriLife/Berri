@@ -4,6 +4,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import { requestCallbackForm } from "@/lib/callback-form";
 
 export default function CorporateSolutionsForm() {
   const [errors, setErrors] = useState({
@@ -13,6 +14,8 @@ export default function CorporateSolutionsForm() {
     companyAuthorityEmail: "",
     companyAuthorityDesignation: "",
   });
+
+  const [error, setError] = useState<string | null>(null);
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -29,9 +32,32 @@ export default function CorporateSolutionsForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    const companyName =  e.currentTarget.companyName.value;
+    const companyAuthorityName =  e.currentTarget.companyAuthorityName.value;
+    const companyAuthorityContact =  e.currentTarget.companyAuthorityContact.value;
+    const companyAuthorityEmail =  e.currentTarget.companyAuthorityEmail.value;
+    const companyAuthorityDesignation =  e.currentTarget.companyAuthorityDesignation.value;
+
+    // console.log("Form data:", name, email, companyName);
+    if(companyName && companyAuthorityName && companyAuthorityContact && companyAuthorityEmail && companyAuthorityDesignation){
+      try{
+        await requestCallbackForm({ companyName, companyAuthorityName, companyAuthorityContact, companyAuthorityEmail, companyAuthorityDesignation});
+        console.log("Callback request successful");
+        setError("Callback request successful! We will get back to you soon.");
+      }catch(error){
+        console.error("Error submitting the form:", error);
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("An unknown error occurred.");
+        }
+      }
+    }else{
+      setError("Form fields cannot be blank.");
+    }
   };
 
   return (
@@ -142,6 +168,7 @@ export default function CorporateSolutionsForm() {
         >
           Request a Call Back
         </Button>
+        {error && <div className="text-red-500 my-2">{error}</div>}
       </form>
     </div>
   );

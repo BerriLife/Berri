@@ -4,7 +4,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-
+import { subscribeToNewsletterForm } from "@/lib/newsletter-form";
 
 export default function NewsletterForm() {
   const [errors, setErrors] = useState({
@@ -12,6 +12,8 @@ export default function NewsletterForm() {
     email: "",
     companyName: "",
   });
+
+  const [error, setError] = useState<string | null>(null);
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -28,9 +30,33 @@ export default function NewsletterForm() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+
+    const name = e.currentTarget.userName.value;
+    const email =  e.currentTarget.email.value;
+    const companyName =  e.currentTarget.companyName.value;
+    const companyAuthorityName =  e.currentTarget.companyAuthorityName?.value || null;
+    const companyAuthorityEmail =  e.currentTarget.companyAuthorityEmail?.value || null;
+    const companyAuthorityDesignation =  e.currentTarget.companyAuthorityDesignation?.value || null;
+
+    // console.log("Form data:", name, email, companyName);
+    if(name && email && companyName) {
+      try{
+        await subscribeToNewsletterForm({name, email, companyName, companyAuthorityName, companyAuthorityEmail, companyAuthorityDesignation});
+        console.log("Subscribed to the newsletter");
+        setError("Subscribed to the newsletter!");
+      }catch(error){
+        console.error("Error submitting the form:", error);
+        if (error instanceof Error) {
+          setError(error.message);
+        } else {
+          setError("An unknown error occurred.");
+        }
+      }
+    }else{
+      setError("Name, email, and company name cannot be blank.");
+    }
   };
 
   return (
@@ -40,13 +66,13 @@ export default function NewsletterForm() {
     >
       <form className="my-8" onSubmit={handleSubmit}>
         <LabelInputContainer className="mb-4">
-          <Label htmlFor="name">
+          <Label htmlFor="userName">
             Nick Name <span className="text-primary">*</span>
           </Label>
           <Input
-            id="name"
+            id="userName"
             placeholder="Your Name"
-            type="name"
+            type="text"
             style={{ fontFamily: "var(--maxima-nouva-normal)" }}
             required
             onBlur={handleBlur}
@@ -133,6 +159,7 @@ export default function NewsletterForm() {
         >
           Get me on board
         </Button>
+        {error && <div className="text-red-500 my-2">{error}</div>}
       </form>
     </div>
   );

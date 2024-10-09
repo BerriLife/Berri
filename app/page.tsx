@@ -5,9 +5,8 @@ import GetStarted from "@/components/get-started";
 import { HeroSection } from "@/components/hero-section";
 import { MarqueeDemo } from "@/components/moving-card";
 import { NavBar } from "@/components/navbar";
-import { Button } from "@/components/ui/button";
+import SubscribeNewsletter from "@/components/subscribe-newsletter";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import { Input } from "@/components/ui/input";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -88,7 +87,7 @@ export default function Home() {
               </div>
             </div>
             <div
-              className="flex justify-center items-center"
+              className="flex floating-image justify-center items-center"
               style={{ width: "100%", height: "400px" }}
             >
               <Image
@@ -105,15 +104,15 @@ export default function Home() {
         <div className="p-8 pt-16">
           <div className="relative flex flex-col justify-evenly items-center gap-6 max-w-6xl mx-auto">
             <div
-              className="absolute bottom-[20%] left-[50%] right-[40%] mb-2"
-              style={{ width: "100%", height: "100%" }}
+              className="absolute bottom-[100%] left-[20%] md:bottom-[95%] md:left-[49%] md:right-[40%] mb-2 "
+              style={{ width: "50%", height: "100px" }}
             >
               <Image
                 src="/images/landing-page/misc/image3.png" // Static image
                 alt="Services by Berri"
-                width={375}
+                width={405}
                 height={150}
-                className="object-cover rounded-lg max-w-full"
+                className="object-cover rounded-lg min-w-[200px] max-w-full max-h-fit"
               />
             </div>
             <div className="flex flex-col md:flex-row justify-evenly items-center gap-x-2">
@@ -125,7 +124,7 @@ export default function Home() {
                   setIsService={setIsService}
                 />
               </div>
-              <div className="flex flex-col justify-evenly items-start gap-y-4">
+              <div className="mt-4 flex flex-col justify-evenly items-start gap-y-4">
                 <div
                   className="flex justify-start items-center ml-2 mt-2"
                   style={{ width: "100%", height: "100%" }}
@@ -149,17 +148,7 @@ export default function Home() {
                     isService ? "flex" : "hidden"
                   }`}
                 >
-                  <Input
-                    placeholder="Enter your email"
-                    className="bg-white focus:border-primary text-sm sm:text-md p-4"
-                    style={{ fontFamily: "var(--maxima-nova-bold)" }}
-                  />
-                  <Button
-                    className="p-4 hover:bg-neutral-100 hover:text-black text-center text-sm sm:text-md hover:no-underline transition-colors duration-500"
-                    style={{ fontFamily: "var(--maxima-nouva-normal)" }}
-                  >
-                    Subscribe
-                  </Button>
+                  <SubscribeNewsletter />
                 </div>
               </div>
             </div>

@@ -15,11 +15,22 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  contactNumber String? 
-  company       String? 
+  id                          String    @id @default(cuid())
+  name                        String?
+  email                       String    @unique
+  emailVerified               DateTime?
+  image                       String?
+  companyName                 String?
+  companyAuthorityName        String?
+  companyAuthorityEmail       String?
+  companyAuthorityDesignation String?
+}
+
+model Company {
+  id                          String  @id @default(cuid())
+  companyName                 String?
+  companyAuthorityName        String?
+  companyAuthorityContact     String?
+  companyAuthorityEmail       String?
+  companyAuthorityDesignation String?
 }
