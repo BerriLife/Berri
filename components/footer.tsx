@@ -35,10 +35,10 @@ export default function Footer() {
 
           {/* Social media icons */}
           <div className="flex space-x-4">
-            <Link href="https://linkedin.com" target="_blank">
+            <Link href="https://linkedin.com/company/berrilife" target="_blank">
               <FaLinkedin className="h-8 w-8 text-primary hover:bg-neutral-100 p-2 rounded-xl"/>
             </Link>
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/berri.life?igsh=bDRtN2JieXA1anQz&utm_source=qr" target="_blank">
               <FaInstagram className="h-8 w-8 text-primary hover:bg-neutral-100 p-2 rounded-xl"/>
             </Link>
           </div>
