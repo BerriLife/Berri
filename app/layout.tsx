@@ -33,6 +33,7 @@ const MaximaNouvaExtraBold = localFont({
 export const metadata: Metadata = {
   title: "Berri",
   description: "Berri Life",
+  
 };
 
 export default function RootLayout({
