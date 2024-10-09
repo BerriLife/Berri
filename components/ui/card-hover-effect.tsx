@@ -24,7 +24,7 @@ export const HoverEffect = ({
   setIsService: any;// Function to update the selected image
   className?: string;
 }) => {
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div

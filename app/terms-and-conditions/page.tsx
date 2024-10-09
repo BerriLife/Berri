@@ -183,7 +183,7 @@ export default function TermsAndConditions() {
             </p>
           </li>
         </ol>
-        For any inquiries, please contact us at: Email: support@berrilife.com
+        For any inquiries, please contact us at: Email: support@berri.life
       </div>
 
       <div>
