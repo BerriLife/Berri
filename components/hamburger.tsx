@@ -3,7 +3,6 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
-  DialogClose,
 } from "@/components/ui/dialog";
 import { RxHamburgerMenu } from "react-icons/rx"; // Import the hamburger icon
 import Link from "next/link"; // For navigation

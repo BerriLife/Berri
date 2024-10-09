@@ -38,7 +38,7 @@ export const FlipImages = ({
         <motion.div
           key={currentImage}
           initial={{
-            opacity: 1,
+            opacity: 0,
             y: "35%", // Start from below (offscreen)
           }}
           animate={{
@@ -48,13 +48,14 @@ export const FlipImages = ({
           exit={{
             opacity: 0,
             y: "-35%", // Exit upwards (roll up effect)
-            filter: "blur(8px)", // Add blur effect
+            // filter: "blur(8px)", // Add blur effect
           }}
           transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 20,
-            duration: 0.8, // Adjust duration for smoother rolling effect
+            // type: "spring",
+            // stiffness: 100,
+            // damping: 20,
+            duration: 0.25, // Adjust duration for smoother rolling effect
+            ease: "easeOut",
           }}
           className="absolute inset-0 flex justify-center items-center" // Ensures content is centered
         >

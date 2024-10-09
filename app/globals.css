@@ -22,7 +22,7 @@ body {
     --popover-foreground: 0 0% 3.9%;
     --primary: 204.6,100%,52.7%;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
+    --secondary: 220.6 13.2% 46.1%;	
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
@@ -74,5 +74,21 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.floating-image {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px); /* Adjust this value to control the float distance */
+  }
+  100% {
+    transform: translateY(0px);
   }
 }

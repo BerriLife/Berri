@@ -23,6 +23,13 @@ const MaximaNouvaBold = localFont({
   display: 'swap',
 })
 
+const MaximaNouvaExtraBold = localFont({
+  src:'./fonts/maxima_nouva/MaximaNouva-ExtraBold-AF65d8537f10cfc.otf',
+  weight: '100 900',
+  variable: '--maxima-nouva-extra-bold',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: "Berri",
   description: "Berri Life",
@@ -35,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${MaximaNouvaNormal.variable} ${MaximaNouvaItalic.variable} ${MaximaNouvaBold.variable} antialiased`}>
+      <body className={`${MaximaNouvaNormal.variable} ${MaximaNouvaItalic.variable} ${MaximaNouvaBold.variable} ${MaximaNouvaExtraBold.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -55,7 +55,7 @@ export function NavBar() {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/corporate_solutions" legacyBehavior passHref>
+              <Link href="/corporate-solutions" legacyBehavior passHref>
                 <NavigationMenuLink className={`${navigationMenuTriggerStyle()} hover:bg-inherit bg-primary text-white rounded-xl`}>
                   Corporate Solutions
                 </NavigationMenuLink>

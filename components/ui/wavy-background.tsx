@@ -7,6 +7,7 @@ export const WavyBackground = ({
   children,
   className,
   containerClassName,
+  canvasClassName,
   colors,
   waveWidth,
   backgroundFill,
@@ -18,6 +19,7 @@ export const WavyBackground = ({
   children?: any;
   className?: string;
   containerClassName?: string;
+  canvasClassName?: String;
   colors?: string[];
   waveWidth?: number;
   backgroundFill?: string;
@@ -40,7 +42,7 @@ export const WavyBackground = ({
       case "slow":
         return 0.001;
       case "fast":
-        return 0.002;
+        return 0.010;
       default:
         return 0.001;
     }
@@ -116,7 +118,10 @@ export const WavyBackground = ({
       )}
     >
       <canvas
-        className="w-screen max-h-80 max-w-screen"
+        className={cn(
+          "w-screen max-h-80 max-w-screen",
+          canvasClassName
+        )}
         ref={canvasRef}
         id="canvas"
         style={{
