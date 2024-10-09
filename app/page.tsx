@@ -103,9 +103,9 @@ export default function Home() {
         </div>
 
         <div className="p-8 pt-16">
-          <div className="flex flex-col justify-evenly items-center gap-6 max-w-6xl mx-auto">
+          <div className="relative flex flex-col justify-evenly items-center gap-6 max-w-6xl mx-auto">
             <div
-              className="flex justify-center items-center mb-2"
+              className="absolute bottom-[20%] left-[50%] right-[40%] mb-2"
               style={{ width: "100%", height: "100%" }}
             >
               <Image
@@ -127,7 +127,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col justify-evenly items-start gap-y-4">
                 <div
-                  className="flex justify-start items-center mt-2"
+                  className="flex justify-start items-center ml-2 mt-2"
                   style={{ width: "100%", height: "100%" }}
                 >
                   <Image
@@ -167,7 +167,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white flex flex-col items-center mt-24">
+      <div id="faq-about" className="bg-white flex flex-col items-center mt-24">
         <div
           className="flex justify-center items-center"
           style={{ width: "50%", height: "100%" }}

@@ -2,6 +2,7 @@ import React from "react";
 import { FlipImages } from "@/components/ui/flip-images";
 import { Button } from "./ui/button";
 import { WavyBackground } from "./ui/wavy-background";
+import Image from "next/image";
 
 export function HeroSection() {
   const images = [
@@ -18,8 +19,8 @@ export function HeroSection() {
   const waveColors = ["#a3e5ff", "#e4e8ff", "#e0fff4", "#ffd1e3"];
 
   return (
-    <div>
-      <div className="h-screen max-h-full flex flex-col justify-evenly items-center mt-12 px-6">
+    <div className="relative">
+      <div className="relative z-0 h-screen max-h-full flex flex-col justify-evenly items-center mt-12 px-6">
         <FlipImages
           images={images}
           duration={2000}

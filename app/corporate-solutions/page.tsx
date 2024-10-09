@@ -5,6 +5,7 @@ import CardSkew from "@/components/skew-card";
 import CorporateSolutionsForm from "@/components/corporate-solutions-form";
 import Image from "next/image";
 import Link from "next/link";
+import { MarqueeDemo } from "@/components/moving-card";
 
 export default function CorporateSolutions() {
   return (
@@ -14,7 +15,7 @@ export default function CorporateSolutions() {
       </div>
 
       <div className="mt-24 flex justify-evenly items-center flex-col md:flex-row max-w-6xl mx-auto">
-        <div className="m-2 p-4 h-[400px] max-h-full flex flex-col justify-evenly items-start">
+        <div className="m-2 p-4 h-[] max-h-full flex flex-col justify-evenly items-start">
           <div
             className="p-2 max-h-fit"
             style={{ width: "100%", height: "100%" }}
@@ -72,9 +73,9 @@ export default function CorporateSolutions() {
         </div>
       </div>
 
-      <div className="mt-12">
+      <div className="mt-12" id="corporate-solutions-form">
         <div
-          className="m-5 mb-10 p-2 flex items-center justify-evenly"
+          className="mb-10 p-2 flex items-center justify-evenly"
           style={{ width: "100%", height: "100%" }}
         >
           <Image
@@ -102,13 +103,38 @@ export default function CorporateSolutions() {
               </div>
             </div>
           </div>
-          <div id="corporate-solutions-form" className="p-2 w-2/3 md:w-[40%]">
+          <div className="p-2 w-2/3 md:w-[40%]">
             <CorporateSolutionsForm />
           </div>
         </div>
       </div>
 
-      <div className="mt-24">
+      <div className="h-[30rem] mt-24 bg-neutral-100 flex flex-col justify-evenly items-center">
+        <div
+          className="p-2 text-sm sm:text-lg md:text-xl"
+          style={{ fontFamily: "var(--maxima-nouva-normal)" }}
+        >
+          Aiming to Empower Employees at Leading Companies Like
+        </div>
+        <MarqueeDemo />
+        <div className="p-2 flex flex-col items-center">
+          <div
+            className="text-center text-sm sm:text-md md:text-lg"
+            style={{ fontFamily: "var(--maxima-nouva-normal)" }}
+          >
+            Inspired by the wellness-focused leadership at leading companies
+            like these.
+          </div>
+          <div
+            className="text-center text-sm sm:text-md md:text-lg"
+            style={{ fontFamily: "var(--maxima-nouva-normal)" }}
+          >
+            Berri is here to support the next wave of growth.
+          </div>
+        </div>
+      </div>
+
+      <div>
         <GetStarted />
       </div>
       <div className="mt-24">

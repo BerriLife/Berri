@@ -23,7 +23,7 @@ export default function Footer() {
 
         {/* Navigation links and social icons on the right */}
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
-          <Link href="/about" className="hover:bg-neutral-100 p-2 rounded-xl">
+          <Link href="/#faq-about" className="hover:bg-neutral-100 p-2 rounded-xl">
             About
           </Link>
           <Link href="/newsletter" className="hover:bg-neutral-100 p-2 rounded-xl">
