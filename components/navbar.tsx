@@ -36,8 +36,8 @@ export function NavBar() {
               </Link>
             </NavigationMenuItem>
           </div>
-          <div className="flex sm:hidden">
-            <Hamburger/>
+          <div className={`mx-2 flex sm:hidden ${isMenuOpen ? 'hidden' : 'flex'}`}>
+            <Hamburger setIsMenuOpen={setIsMenuOpen}/> {/* Pass setIsMenuOpen to Hamburger */}
           </div>
           <div className={`flex-col sm:flex-row gap-2 ${isMenuOpen ? 'flex' : 'hidden'} sm:flex`}>
             <NavigationMenuItem>

@@ -137,7 +137,7 @@ export function AccordionDemo() {
         className="hover:shadow-sm border border-neutral-100 px-4 rounded-xl my-2"
         value="item-8"
       >
-        <AccordionTrigger className="text-lg hover:no-underline">
+        <AccordionTrigger className="text-[17px] sm:text-lg hover:no-underline">
           Will my employer know what I talk about?
         </AccordionTrigger>
         <AccordionContent className="text-secondary">

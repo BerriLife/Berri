@@ -16,26 +16,22 @@ export default function Home() {
     {
       image: "/images/landing-page/cards/card1.png",
       service: "/images/landing-page/service/service1.png",
-      text: "Instant support whenever you need it. Chat with professionals 24/7 or 15mins-focused call sessions. It's like having a personal wellness coach-confidential, secure, and right at your fingertips. Whether it's work stress, life balance, or just needing someone to listen, Berri Buddies are here to make you feel heard and supported, anytime.",
-      link: "https://example.com",
+      text: "Instant support whenever you need it. Chat with professionals 24/7 or 15 mins-focused call sessions. It's like having a personal wellness coach-confidential, secure, and right at your fingertips. Whether it's work stress, life balance, or just needing someone to listen, Berri Buddies are here to make you feel heard and supported, anytime.",
     },
     {
       image: "/images/landing-page/cards/card2.png",
       service: "/images/landing-page/service/service2.png",
       text: "Share your thoughts, ask questions, or vent in a completely anonymous forum. Whether it's work stress, personal struggles, or just something on your mind, Talk Berri is your private, safe space to connect with others from your organization. It's all about real, honest conversations without fear of judgment-because sometimes, just talking helps. Your identity is protected, and your voice matters.",
-      link: "https://example.com",
     },
     {
       image: "/images/landing-page/cards/card3.png",
       service: "/images/landing-page/service/service3.png",
       text: "A fresh perspective delivered to you every day. Berri Daily Insights offers quick tips, mindset shifts, and thoughtful prompts to help you manage stress, boost your well-being, and change how you approach life's challenges. It's your daily mental boost-easy, actionable, and designed to keep you feeling balanced and in control. Swipe through daily insights and make them part of your routine.",
-      link: "https://example.com",
     },
     {
       image: "/images/landing-page/cards/card4.png",
       service: "/images/landing-page/service/service4.png",
       text: "Stay ahead with weekly insights on mental wellness, personal growth, and tips to manage daily challenges. Delivered straight to your inbox, our newsletter covers everything from stress management to building better habits and fostering positive change. It's not just al Madhav Aggarwal mental health-it's about shaping a healthier, more balanced life, one email at a time.",
-      link: "https://example.com",
     },
   ];
 
@@ -125,7 +121,7 @@ export default function Home() {
                   setIsService={setIsService}
                 />
               </div>
-              <div className="mt-4 flex flex-col justify-evenly items-start gap-y-4">
+              <div id="service-info" className="mt-4 flex flex-col justify-evenly items-start gap-y-4">
                 <div
                   className="flex justify-start items-center ml-2 mt-2"
                   style={{ width: "100%", height: "100%" }}
@@ -194,8 +190,8 @@ export default function Home() {
             src="/images/landing-page/misc/image5.png" // Replace with actual image path
             alt="Berri Location Illustration"
             width={1080}
-            height={720}
-            className="object-cover max-w-full"
+            height={1080}
+            className="object-cover max-w-full max-h-full"
           />
         </div>
       </div>

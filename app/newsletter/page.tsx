@@ -60,6 +60,7 @@ export default function Newsletter() {
 
       <div
         className="flex flex-col sm:flex-row justify-evenly items-center max-w-6xl mx-auto mt-24"
+        id="newsletter-form"
       >
         <div className="p-8">
           <div className="grid grid-cols-1 justify-evenly items-center max-w-6xl mx-auto">
@@ -77,7 +78,7 @@ export default function Newsletter() {
             </div>
           </div>
         </div>
-        <div id="newsletter-form" className="p-2 w-2/3 md:w-[40%]">
+        <div className="p-2 w-2/3 md:w-[40%]">
           <NewsletterForm />
         </div>
       </div>

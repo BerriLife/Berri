@@ -17,22 +17,27 @@ export const HoverEffect = ({
     image: string;
     service: string;
     text: string;
-    link: string;
   }[];
   setSelectedImage: (image: string) => void;
-  setSelectedText: (text: string) => void; 
-  setIsService: any;// Function to update the selected image
+  setSelectedText: (text: string) => void;
+  setIsService: any; // Function to update the selected image
   className?: string;
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  // Function to scroll to the #service-info section only on screens smaller than 'md'
+  const scrollToServiceInfo = () => {
+    // Check if screen width is smaller than 768px (Tailwind 'md' breakpoint)
+    if (window.innerWidth < 768) {
+      const serviceInfoElement = document.getElementById("service-info");
+      if (serviceInfoElement) {
+        serviceInfoElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
-    <div
-      className={cn(
-        "grid grid-cols-1 md:grid-cols-2 gap-4",
-        className
-      )}
-    >
+    <div className={cn("grid grid-cols-1 md:grid-cols-2 gap-4", className)}>
       {items.map((item, idx) => (
         <div
           key={idx}
@@ -40,13 +45,19 @@ export const HoverEffect = ({
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
           onClick={() => {
-            setSelectedImage(item.service); // Update selected image on click
-            setSelectedText(item.text); // Update selected text on click
-            if(item.image === "/images/landing-page/cards/card4.png") {
+            // Update the selected image and text
+            setSelectedImage(item.service);
+            setSelectedText(item.text);
+
+            // Check if it's the specific card for service
+            if (item.image === "/images/landing-page/cards/card4.png") {
               setIsService(true);
-            }else{
+            } else {
               setIsService(false);
             }
+
+            // Scroll to the #service-info section if screen is smaller than 'md'
+            scrollToServiceInfo();
           }}
         >
           <AnimatePresence>
